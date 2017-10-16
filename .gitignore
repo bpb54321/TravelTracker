@@ -1,1 +1,5 @@
 .idea
+Treasuregram/settings\.pyc
+
+# Compiled Python files
+*.pyc
