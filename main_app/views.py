@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 
 
-def index(response):
-    return HttpResponse('<h1>Hello Explorers!</h1>')
+def index(request):
+    context = {'treasure_name': 'Gold Nugget',
+               'treasure_value': 1000.00}
+    return render(request, 'index.html', context)
