@@ -4,17 +4,23 @@ from django.shortcuts import render
 
 
 def index(request):
-    treasures = [
-        Treasure('Gold Nugget', 500.00, 'gold', "Curly's Creek, NM"),
-        Treasure("Fool's Gold", 0, 'pyrite', "Fool's Falls, CO"),
-        Treasure('Coffee Can', 20.00, 'tin', 'Acme, CA'),
-    ]
 
-    return render(request, 'index.html', {'treasures': treasures})
+    return render(request, 'index.html', {'locations': locations})
 
-class Treasure:
-    def __init__(self, name, value, material, location):
+
+class Location:
+    def __init__(self, name, predators, num_restaurants, img_url):
             self.name = name
-            self.value = value
-            self.material = material
-            self.location = location
+            self.predators = predators
+            self.num_restaurants = num_restaurants
+            self.img_url = img_url
+
+
+locations = [
+    Location("Fool's Falls, CO", 'Flash Floods', 0,
+             'http://courseware.codeschool.com/try_django/images/fools-falls.jpg'),
+    Location("Curly's Creek, NM", 'Rattle Snakes', 2,
+             'http://courseware.codeschool.com/try_django/images/curlys-creek.jpg'),
+    Location('The Delicate Arch, UT', 'Scorpions', 0,
+             'http://courseware.codeschool.com/try_django/images/delicate-arch.jpg')
+]

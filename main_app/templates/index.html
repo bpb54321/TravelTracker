@@ -1,17 +1,18 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>TreasureGram</title>
+    <title>TravelTracker</title>
+    <link href="  " rel="stylesheet" media="screen" />
+    <link href="   " rel="stylesheet" media="screen" />
 </head>
 <body>
-    <h1>TreasureGram</h1>
-    {% for treasure in treasures %}
-        <p>{{ treasure.name }}</p>
-        {% if treasure.value > 0 %}
-            <p>{{ treasure.value }}</p>
-        {% else %}
-            <p>Unknown</p>
-        {% endif %}
-    {% endfor %}
+    <div class="panel">
+        <h1>TravelTracker</h1>
+        {% for location in locations %}
+            <p>{{ location.name }}</p>
+            <p>{{ location.predators }}</p>
+            <img src="{{ location.img_url }}" width="80" />
+        {% endfor %}
+    </div>
 </body>
 </html>
