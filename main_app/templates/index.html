@@ -15,7 +15,7 @@
     </nav>
     <main class="container">
         {% for location in locations %}
-            <div class="tracker panel panel-default">
+            <div class="tracker panel panel-default {% cycle 'tracker-left' 'tracker-right' %}">
                 <div class="panel-heading">
                     <p>{{ location.name }}</p>
                 </div>
