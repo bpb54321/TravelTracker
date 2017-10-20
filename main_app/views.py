@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import models
 
 # Create your views here.
 
@@ -8,12 +9,11 @@ def index(request):
     return render(request, 'index.html', {'locations': locations})
 
 
-class Location:
-    def __init__(self, name, predators, num_restaurants, img_url):
-            self.name = name
-            self.predators = predators
-            self.num_restaurants = num_restaurants
-            self.img_url = img_url
+class Location(models.Model):
+            name = models.CharField(max_length=100)
+            predators = models.CharField(max_length=100)
+            num_restaurants = models.IntegerField()
+            img_url = models.CharField(max_length=100)
 
 
 locations = [
